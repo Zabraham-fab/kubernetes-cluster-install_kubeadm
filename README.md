@@ -1,20 +1,25 @@
 # Kubernetes Cluster Kubeadm ile Kurulum
-**Kurulum** 
 
 ![image1](./Kubernetes-Architecture.jpeg)
+# **Kurulum** 
 
-## kubeadm kurulum
+
+
+## kubeadm ile kurulum
+
+![image2](./Kubeadm.png)
 
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
 ## Multipass kurulum
-
-![image2](./Kubeadm.png)
+![image4](./195053.png)
 
 
 Multipass, bir sanal makine yönetim aracıdır ve özellikle Ubuntu tabanlı işletim sistemlerinde kullanılmak üzere tasarlanmıştır. Multipass, kullanıcıların yerel makinalarında hızlı ve basit bir şekilde sanal makineler oluşturmasına ve yönetmesine yardımcı olur. 
 
 https://multipass.run/install
+
+![image3](./multi.png)
 
 # windows makine için:
 https://multipass.run/download/windows
