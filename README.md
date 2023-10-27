@@ -118,10 +118,10 @@ $ sudo ufw allow 10259/tcp
 $ sudo ufw allow 10257/tcp
 $ sudo apt-get update
 $ sudo apt-get install -y apt-transport-https ca-certificates curl
-$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-$ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+$ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 $ sudo apt-get update
-$ sudo apt-get install -y kubelet kubeadm kubectl
+$ sudo apt-get install kubelet kubeadm kubectl
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
@@ -144,8 +144,10 @@ sudo ufw allow 30000:32767/tcp
 sudo ufw allow 22/tcp
 sudo ufw allow 8472/udp
 ```
-buraya kadar her iki makinede de yukarıdaki komutlar çalıştırılacak.
-Buradan sonraki komutlar master node da çalıştırılacak...
+* buraya kadar her iki makinede de yukarıdaki komutlar çalıştırılacak.
+
+# Dikkat
+*Buradan sonraki komutlar master node da çalıştırılacak...
 
 **4:** kubernetes cluster kurulumu
 
