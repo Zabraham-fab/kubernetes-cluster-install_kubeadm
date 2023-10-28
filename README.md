@@ -76,11 +76,28 @@ $ sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 Multipass ile açılan sanal makineler (master ve node1) Dns çözümlemede sürekli hata veriyor.
 /etc/resolv.conf dosyası içeriğinde nameserver 8.8.8.8 kayıtlı değil dolayısıyla sürekli "sudo apt update" komutunda hata yeriyor. Kalıcı çözmek için "resolv.conf" içine bu nameserverları nano ile kayıt etmek lazım.
 ```
-sudo nano /etc/resolv.conf
 
-ikisinide kaydet kapat
-nameserver 8.8.8.8
-nameserver 8.8.4.4
+sudo nano /etc/systemd/resolved.conf
+
+iki nameserver değerinide kaydet kapat
+
+[Resolve]
+DNS=8.8.8.8 8.8.4.4
+#FallbackDNS=
+#Domains=
+#LLMNR=no
+#MulticastDNS=no
+#DNSSEC=no
+#DNSOverTLS=no
+#Cache=no-negative
+#DNSStubListener=yes
+#ReadEtcHosts=yes
+
+```
+daha sonra prosesi restart et...
+
+```
+sudo systemctl restart systemd-resolved
 ```
 
 
